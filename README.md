@@ -11,7 +11,7 @@ This project studies how electric vehicle (EV) charging sessions behave and buil
 - Forecast daily total charging demand (time series).
 - Present everything in a single dashboard.
 
-## Project structure
+## Project structure and folder
 
 ```
 EV Charging Demand Session/
@@ -123,10 +123,16 @@ The 7-day moving average is scored one day ahead using real test values, while t
 - **Clipped plots:** the duration histogram may be capped at 600 minutes for readability. Read the caption when interpreting it.
 - **Time-series evaluation** uses a single 74-day test period, so the results depend on that period.
 
-## Setup
+## Project Setup
 
 Requires Python 3.10 or newer.
 
+### 1. Clone the repository
+```bash
+git clone 
+cd 
+```
+### 2. Install dependency
 ```bash
 python -m venv venv
 venv\Scripts\activate          # Windows
