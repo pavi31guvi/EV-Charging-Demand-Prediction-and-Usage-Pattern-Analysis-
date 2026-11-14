@@ -129,8 +129,8 @@ Requires Python 3.10 or newer.
 
 ### 1. Clone the repository
 ```bash
-git clone 
-cd 
+git clone https://github.com/pavi31guvi/EV-Charging-Demand-Prediction-and-Usage-Pattern-Analysis-.git
+cd EV-Charging-Demand-Prediction-and-Usage-Pattern-Analysis
 ```
 ### 2. Install dependency
 ```bash
