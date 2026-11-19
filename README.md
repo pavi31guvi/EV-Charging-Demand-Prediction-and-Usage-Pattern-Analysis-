@@ -160,7 +160,7 @@ The saved `.pkl` models must be loaded with the same scikit-learn and LightGBM v
 
 ## Running the notebooks
 
-Open the notebooks in Jupyter or VS Code from the project root and run them in order: `EDA.ipynb`, then `Regression.ipynb`, `Classification.ipynb`, and `Time_Series.ipynb`. The EDA notebook creates `data/ev_charging_featured.csv`, which the other notebooks read. The regression and classification notebooks save the `.pkl` models into `models/`.
+Open the notebooks in Jupyter or VS Code from the project root and run them in order: `Cleaning.ipynb`, `EDA.ipynb`, then `Regression.ipynb`, `Classification.ipynb`, and `Time_Series.ipynb`. The EDA notebook creates `data/ev_charging_featured.csv`, which the other notebooks read. The regression and classification notebooks save the `.pkl` models into `models/`. The graph images are saved into `images/` folders.
 
 ## Running the dashboard
 
