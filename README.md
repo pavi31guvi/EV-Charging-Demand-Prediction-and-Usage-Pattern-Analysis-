@@ -176,9 +176,3 @@ The dashboard opens in your browser with four tabs:
 4. **Predict session:** enter a planned session (date, time, duration, location, charger, and previous-session counts) to get a predicted demand, a High Demand probability and a predicted class.
 
 The graphs shown in the dashboard are the PNG files saved by the notebooks. The app looks for them in `models/`, `models/images/` and `images/`. Graph sizes can be changed in the `GRAPH_WIDTHS` table at the top of `app.py`.
-
-## Troubleshooting
-
-- **"Graph not found":** the PNG is not in one of the folders the app searches. Move it into `models/` or `images/`, or re-run the notebook that creates it.
-- **Model loading error:** check that the installed scikit-learn and LightGBM versions match the ones used for training.
-- **Data file not found:** the dashboard expects `data/ev_charging_featured.csv`. Change `DATA_PATH` in `app.py` if the file has another name.
