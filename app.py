@@ -55,25 +55,25 @@ TYPE_LABELS = {0: "Type 0", 1: "Type 1"}
 # Scores saved from the notebooks (full dataset, last 20% = test period)
 REGRESSION_RESULTS = pd.DataFrame(
     [
-        ["Linear Regression", 7.1171, 112.6245, 10.6125, 0.5097, 0.4158],
-        ["Decision Tree", 4.9781, 89.3586, 9.4530, 0.8411, 0.5365],
-        ["Random Forest", 4.5852, 59.8993, 7.7395, 0.8954, 0.6893],
-        ["Gradient Boosting", 4.2880, 56.5744, 7.5216, 0.8384, 0.7065],
-        ["XGBoost", 4.2383, 55.9723, 7.4815, 0.8335, 0.7097],
-        ["LightGBM", 4.1510, 54.5723, 7.3873, 0.8537, 0.7169],
+        ["Linear Regression", 7.1171, 112.6245, 10.6125, 0.4158],
+        ["Decision Tree", 4.9781, 89.3586, 9.4530, 0.5365],
+        ["Random Forest", 4.5739, 59.8254, 7.7347, 0.6897],
+        ["Gradient Boosting", 4.2880, 56.5744, 7.5216, 0.7065],
+        ["XGBoost", 4.2383, 55.9723, 7.4815, 0.7097],
+        ["LightGBM", 4.1510, 54.5723, 7.3873, 0.7169],
     ],
-    columns=["Model", "MAE", "MSE", "RMSE", "Train R²", "Test R²"],
+    columns=["Model", "MAE", "MSE", "RMSE", "R2"],
 )
 
 CLASSIFICATION_RESULTS = pd.DataFrame(
     [
-        ["Logistic Regression", 0.8407, 0.8276, 0.8265, 0.8200, 0.8232, 0.8881],
-        ["Decision Tree", 0.9196, 0.8612, 0.8379, 0.8885, 0.8624, 0.8958],
-        ["Random Forest", 0.9079, 0.8750, 0.8286, 0.9389, 0.8803, 0.9339],
-        ["XGBoost", 0.9109, 0.8860, 0.8547, 0.9244, 0.8881, 0.9505],
-        ["LightGBM", 0.9116, 0.8880, 0.8561, 0.9269, 0.8901, 0.9496],
+        ["Logistic Regression", 0.8276, 0.8265, 0.8200, 0.8232, 0.8881],
+        ["Decision Tree", 0.8612, 0.8379, 0.8885, 0.8624, 0.8958],
+        ["Random Forest", 0.8750, 0.8286, 0.9389, 0.8803, 0.9339],
+        ["XGBoost", 0.8860, 0.8547, 0.9244, 0.8881, 0.9505],
+        ["LightGBM", 0.8880, 0.8561, 0.9269, 0.8901, 0.9496],
     ],
-    columns=["Model", "Train Accuracy", "Test Accuracy", "Precision", "Recall", "F1", "ROC-AUC"],
+    columns=["Model", "Accuracy", "Precision", "Recall", "F1", "ROC-AUC"],
 )
 
 FORECAST_RESULTS = pd.DataFrame(
@@ -262,7 +262,7 @@ def regression_section(df):
     st.subheader("Regression: predicting charging demand")
 
     table = REGRESSION_RESULTS.set_index("Model")
-    best = table["Test R²"].idxmax()  # best = highest Test R²
+    best = table["R2"].idxmax()  # best = highest Test R²
 
     st.table(highlight_best(table, best))
     st.success(f"**Best regression model: {best}.** {REGRESSION_EXPLANATIONS[best]}")
